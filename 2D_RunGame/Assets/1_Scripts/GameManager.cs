@@ -9,32 +9,31 @@ public class GameManager : MonoBehaviour
     public Image PlayTimeBar;
 
     public GameObject[] NumberImage;
-    public Sprite[] Number;
+    public GameObject[] StageMap;
 
     public GameObject EndPanel;
-
-    public GameObject[] StageMap;
     public GameObject LoadMap;
+
+    public Sprite[] Number;
+
     public Text StageText;
-
-
 
     void Start()
     {
         SoundManager.Instance.PlaySound("BG_Sound");
+
         if(DataManager.Instance.StageClear == false)
         {
             DataManager.Instance.score = 0;
             DataManager.Instance.playerDie = false;
             DataManager.Instance.playTimeCurrent = DataManager.Instance.playTimeMax;
-        } else
+        }
+
+        else
         {
             DataManager.Instance.playerDie = false;
             DataManager.Instance.StageClear = false;
         }
-
-
-
     }
 
     void Update()
@@ -112,10 +111,9 @@ public class GameManager : MonoBehaviour
 
     public void Load_Stage()
     {
-
-        LoadMap.transform.position = new Vector3(15f, LoadMap.transform.position.y, LoadMap.transform.position.z);
+        LoadMap.transform.position = new Vector3(15f, LoadMap.transform.position.y, 
+            LoadMap.transform.position.z);
         LoadMap.SetActive(true);  //로드맵 열기.
-
     }
 
     void StageStart()  //스테이지 시작.

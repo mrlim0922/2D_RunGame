@@ -19,13 +19,8 @@ public class MagnetBird : MonoBehaviour
                 Vector2 dir = player.transform.position - transform.position;
                 transform.Translate(dir.normalized * moveSpeed * Time.deltaTime, Space.World);
             }
-
         }
     }
-
-
-
-
 
     //충돌처리.
     void OnTriggerEnter2D(Collider2D other) //충돌판정 

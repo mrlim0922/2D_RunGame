@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-
     public float jump = 3f;
     public float jump2 = 3.5f;
 
     int jumpCount = 0;
-
-
 
     public void JumpButton()
     {
@@ -31,13 +28,11 @@ public class PlayerMove : MonoBehaviour
                 jumpCount += 1;  //이중점프 카운트.
             }
         }
-
     }
 
     //충돌처리.
     void OnCollisionEnter2D(Collision2D other) //충돌판정.
     {
-
         if (other.gameObject.tag.CompareTo("Land") == 0) // Land 판단
         {
             jumpCount = 0;
@@ -47,7 +42,5 @@ public class PlayerMove : MonoBehaviour
         {
             DataManager.Instance.playTimeCurrent -= 3f;
         }
-
-
     }
 }
